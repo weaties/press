@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' >
+    
+<p>Ewe platform Showcase
+2013q1</p>
+</div>
+      <div class='step' >
+    
+<p>EWE Platform Q1 Accomplishments</p>
+</div>
+      <div class='step' >
+    
+<h1>Team</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Insufficient capacity to meet the demands on the platform team</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Hire additional staff in Bellevue and Gurgaon</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>Increased delivery and support capacity</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>7 Devs in Gurgaon</li>
+<li>3 devs + 1 QA in Bellevue</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Data access</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Service Invoker is legacy custom E3 platform code that is difficult to use, and hard to manage.</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Removed old map service related code</li>
+<li>Removed user service messages that goes through </li>
+<li>Database calls through Camel routes, in domain (formerly in data access) service invoker</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>Removed dependencies on service </li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>TODO: get count of files f&amp; classes removed</li>
+</ul>
+
+<p>owner: Gaurav &amp; Nancy
+get metrics on number of classes and files removed.</p>
+</div>
+      <div class='step' >
+    
+<h1>Spring Context</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Current spring contexts are not a good fit for the current expweb architecture.</li>
+<li>Database calls mislocated domain and not data access.</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Spring aware of all of the application contexts in expweb</li>
+<li>Collapsed the application contexts from 8 to 4
+
+<ul>
+<li>Activity</li>
+<li>Platform</li>
+<li>System</li>
+<li>ui </li>
+</ul></li>
+<li>Created new naming conventions for Spring beans and files.</li>
+<li>All database calls are moved to camel and dataaccess layer.</li>
+<li>Refreshable beans are moved to expweb servlet context</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>Better alignment of spring context with expweb arch layers.
+
+<ul>
+<li>Makes it harder to do bad things</li>
+</ul></li>
+<li>Clean data access layer.</li>
+<li>Better alignment with spring community norms</li>
+<li>Less coupling to e3.foundation</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>86% of data  calls going through camel</li>
+</ul>
+
+<p>Owner: Ken \ Jason
+TODO: Get the metrics
+283 out 328 service alls</p>
+</div>
+      <div class='step' >
+    
+<h1>User End 2 End</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>User related pages are hosted in emain</li>
+<li>Lacking global persistent view of users</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>30 day spike shows that we can associate registered user with an unregistered user via email address. </li>
+<li>POC for the &quot;fly out&quot; login</li>
+<li>New e3 login page (Not yet trafficked)</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>Shows that approach is viable</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<p>Owner: Ranjan, Amit - showcase video
+TODO: Think about the metrics - not live yet - so is hard.</p>
+</div>
+      <div class='step' >
+    
+<h1>User Interaction</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>No ability to understand user interaction &amp; behavior with site in real time</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Capture user interaction within expweb</li>
+<li>user interaction IDL &amp; Management process</li>
+<li>user interaction service &amp; management infrastructure
+
+<ul>
+<li>(github, maven, AWS)</li>
+</ul></li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>system that allows us to capture AND understand user behavior in real time</li>
+<li>Ability to create compulsion loops based on real time interaction of all users</li>
+<li>Enables Data Capture toolkit</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>50% of .com 251 rps @ 25ms response time (99.9)  2 AWS instances behind 1 load balancer</li>
+</ul>
+
+<p>Owner: Anuraag</p>
+</div>
+      <div class='step' >
+    
+<h1>Platform Enhancements</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Cost of ownership of the machine we have created.</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Created initial version of dashboard for ewe platform events</li>
+<li>Validation of log4j.xml parse errors at startup</li>
+<li>Report for invalid site requests into one common place with clear message</li>
+<li>Deleted compact cookie code</li>
+<li>Enabled and supported application engineerings rollout of Staying Alive</li>
+<li>Platform test case migration from junit to test (60%-80%)</li>
+<li>Remaining 20% to deprecate with refactorings.</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<h2>Metrics:</h2>
+</div>
+      <div class='step' >
+    
+<h1>Localization</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Localization take place via vendors</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Support for inhouse localization via worldserver</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>No longer pay vendors, All localizers are employees</li>
+<li>stages us for higher frequency localization</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>No longer paying vendors</li>
+<li>Improved ad hoc turn around time.</li>
+</ul>
+
+<p>Steve C - Video</p>
+</div>
+      <div class='step' >
+    
+<h1>E3`</h1>
+
+<h2>Problem:</h2>
+
+<ul>
+<li>Current applocaiton infrastrcutre challenges rapid serving of pages to locations around the world, since all requests come to Chandler.</li>
+</ul>
+
+<h2>Deliverables:</h2>
+
+<ul>
+<li>Camel Abacus Route &amp; Unit &amp; Integration test with Camel test suite</li>
+<li>Adding new library for Camel EIPs &amp;  tests</li>
+<li>Caching Abacus result using Camel Cache &amp; test cases</li>
+<li>Site Service POC using DropWizard</li>
+<li>Created Interfaces of Various E3 components. e.g. experiment, site, usercontext, etc.</li>
+</ul>
+
+<h2>Benefits:</h2>
+
+<ul>
+<li>Gelocation of page rendering will allow increased performance to the user</li>
+<li>High availbiilty in multiple datacenters</li>
+<li>decoupling of teams development, testing and deployment</li>
+<li>These modules are independent of the E3 platform</li>
+<li>Expweb will be consuming these modules as well to replace the E3 platform libraries</li>
+</ul>
+
+<h2>Metrics:</h2>
+
+<ul>
+<li>11 modules planned. </li>
+<li>3 standalone already (Camel, monitoring, STCS). Others in DX Web </li>
+<li>High level design of e3` platform modules.</li>
+<li>Bug reporting / tracking using unit tests</li>
+</ul>
+
+<p>Owner: Aaron
+<a href="https://github.com/ExpediaInc/exp-dx-web/blob/master/dxweb/platform/docs/component-dependencies.png">https://github.com/ExpediaInc/exp-dx-web/blob/master/dxweb/platform/docs/component-dependencies.png</a>
+OWNER: lakshmi</p>
+
+<p>place holder QA and bug tracking approach for e3&#39; libraries of failiung unit test</p>
+</div>
+      <div class='step' >
+    
+<h1>EWE Platform Q2 plan</h1>
+
+<p>https://confluence/display/POS/EWE+Platform+2013+Road+Map</p>
+
+<ul>
+<li>Finish Spring context refactor</li>
+<li>Refactor Domain and presentation.</li>
+<li>All of the bean loading is specified in spring xml files instead of foundation open.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Data Access</h1>
+
+<ul>
+<li>Remove dependency on service invoker modules</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>E3`</h1>
+
+<ul>
+<li>First release of Platform e3` modules for DX Web</li>
+<li>User End2End </li>
+<li>New E3 login page going live</li>
+</ul>
+
+<p>Owner Hao
+TODO: feedback from 120 day planning</p>
+</div>
+      <div class='step' >
+    
+<h1>User Interaction</h1>
+
+<ul>
+<li>Writing raw logs to s3</li>
+<li>Realtime filtering capabilities</li>
+<li>Trend analyser in place to produce compulsion loops</li>
+<li>Filtered trace logging from live site (client perf, errors, Interaction and server side interaction) all available in one place for analysis</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Platform Enhancements</h1>
+
+<ul>
+<li>UPgrades
+
+<ul>
+<li>Quova</li>
+<li>JDK</li>
+</ul></li>
+</ul>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
